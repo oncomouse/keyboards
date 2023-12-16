@@ -14,13 +14,15 @@ echo "Update git sub-modules..."
 git submodule sync --recursive
 git submodule update --init --recursive --progress
 
-mkdir -p $USER_SPACE
 qmk config user.qmk_home="$QMK_HOME"
 
-while read -r dir; do
-    OUTPUT_DIR="$(echo "$dir" | sed -e "s@$KEYBOARD_HOME/qmk@$QMK_HOME@")"
+# Link in keymaps and such:
+while read -r file; do
+    OUTPUT_DIR="$(echo "$(dirname "$file")" | sed -e "s@$KEYBOARD_HOME/qmk@$QMK_HOME@")"
     mkdir -p "${OUTPUT_DIR}"
-    ln -sf "${dir}"/* "${OUTPUT_DIR}"
-done <<< "$(find "$KEYBOARD_HOME/qmk/keyboards" -type d -links 2)"
+    ln -sf "${file}" "${OUTPUT_DIR}"
+done <<< "$(find "$KEYBOARD_HOME/qmk/keyboards" -type f)"
 
+# Prepare users:
+mkdir -p $USER_SPACE
 find "$KEYBOARD_HOME/qmk/users" -type d -links 2 -exec ln -sf {} "$USER_SPACE" \;
