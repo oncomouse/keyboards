@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, KC_END,  _______, _______, _______, _______, _______, KC_UP,   _______, _______, _______, _______, _______,
         KC_CAPS, KC_HOME, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_BTN2,          _______,
         _______, _______, _______, _______, _______, _______, KC_DOWN, KC_END,  _______, _______, _______, KC_BTN1,          KC_MS_U, KC_BTN3,
-        _______, _______, _______,                   _______,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R,
+        _______, _______, _______,                   _______,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R),
 };
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
