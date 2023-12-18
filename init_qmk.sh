@@ -14,7 +14,9 @@ echo "Update git sub-modules..."
 git submodule sync --recursive
 git submodule update --init --recursive --progress
 
-qmk config user.qmk_home="$QMK_HOME"
+if command -v qmk >/dev/null 2>&1; then
+    qmk config user.qmk_home="$QMK_HOME"
+fi
 
 # Link in keymaps and such:
 while read -r file; do
