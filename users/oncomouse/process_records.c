@@ -6,7 +6,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   static uint16_t custom_lctl_timer;
   switch(keycode) {
   /* Stop music and send lock screen shortcut */
-  case QMKSTOPLOCK:
+  case QM_STLK:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_MSTP) SS_DELAY(50) SS_LWIN(SS_LCTL("q")));
     }

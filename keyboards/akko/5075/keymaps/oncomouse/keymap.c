@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, GU_TOGG, _______,                   _______,                            _______, _______, _______, RGB_SAD, RGB_VAD, RGB_SAI),
 
     [__MOTION] = LAYOUT( /* Base */
-    QMKSTOPLOCK, KC_BRID, KC_BRIU, _______, _______, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, KC_MSTP, RGB_TOG,
+        QM_STLK, KC_BRID, KC_BRIU, _______, _______, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, KC_MSTP, RGB_TOG,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, KC_END,  _______, _______, _______, _______, _______, KC_UP,   _______, _______, _______, _______, _______,
         KC_CAPS, KC_HOME, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_BTN2,          _______,
