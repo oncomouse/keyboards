@@ -9,6 +9,7 @@ if [[ ! -d "$QMK_HOME" ]]
 then
     echo "Add git sub-modules..."
     git submodule add -f https://github.com/Keychron/qmk_firmware
+    git submodule add -f https://github.com/WestberryTech/wb32-dfu-updater
 fi
 echo "Update git sub-modules..."
 git submodule sync --recursive
@@ -16,6 +17,12 @@ git submodule update --init --recursive --progress
 
 if command -v qmk >/dev/null 2>&1; then
     qmk config user.qmk_home="$QMK_HOME"
+fi
+
+if command -v wb32-dfu-update_cli >/dev/null 2>&1; then
+    cd wb32-dfu-update/
+    sudo bash ./bootstrap.sh install
+    cd ..
 fi
 
 # Link in keymaps and such:
