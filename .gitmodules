@@ -2,3 +2,6 @@
 	path = qmk_firmware
 	url = https://github.com/Keychron/qmk_firmware
 	ignore = dirty
+[submodule "wb32-dfu-updater"]
+	path = wb32-dfu-updater
+	url = https://github.com/WestberryTech/wb32-dfu-updater
