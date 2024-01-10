@@ -24,8 +24,6 @@ enum layers{
   WIN_BASE,
   WIN_FN,
   __MOTION,
-  /* __MOTION, */
-  /* WIN_EMACS, */
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
