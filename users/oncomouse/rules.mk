@@ -4,8 +4,8 @@ COMBO_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 LEADER_ENABLE = yes
 TAP_DANCE_ENABLE = yes
-SRC += tap_dance.c
 
+SRC += tap_dance.c
 SRC += process_records.c
 ifeq ($(strip $(KEY_OVERRIDE_ENABLE)), yes)
 	SRC += override_user.c

@@ -7,5 +7,8 @@
 #if defined(COMBO_ENABLE)
 #    include "combo_user.h"
 #endif
+#if defined(TAP_DANCE_ENABLE)
+#    include "tap_dance.h"
+#endif
 // Use constant mouse speed:
 #define MK_3_SPEED
