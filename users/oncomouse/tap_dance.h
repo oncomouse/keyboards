@@ -34,4 +34,5 @@ enum {
     TD_NUM_STP,
     TD_PGUP_PRV,
     TD_PGDN_NXT,
+    TD_F12_PRV,
 };
