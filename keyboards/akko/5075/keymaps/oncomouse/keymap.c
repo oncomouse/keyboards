@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,      KC_MINS, KC_EQL,  KC_BSPC,  TD(TD_HOME_PLY),
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,      KC_LBRC, KC_RBRC, KC_BSLS,  TD(TD_PGUP_PRV),
    MO(__MOTION), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,   KC_QUOT, KC_ENT,            TD(TD_PGDN_NXT),
-        SC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   SC_RSPC,          KC_UP,    TD(TD_END_STP),
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,          KC_UP,    TD(TD_END_STP),
         KC_LCTL, KC_LGUI, KC_LALT,                   LT(__MOTION, KC_SPC),               KC_RALT, MO(WIN_FN),KC_RCTL, KC_LEFT, KC_DOWN,  KC_RGHT),
 
     [WIN_W] = LAYOUT( /* Base */
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,      KC_MINS, KC_EQL,  KC_BSPC,  TD(TD_HOME_PLY),
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,      KC_LBRC, KC_RBRC, KC_BSLS,  TD(TD_PGUP_PRV),
    MO(__MOTION), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,   KC_QUOT, KC_ENT,            TD(TD_PGDN_NXT),
-        SC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   SC_RSPC,          KC_UP,    TD(TD_END_STP),
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,          KC_UP,    TD(TD_END_STP),
         KC_LCTL, KC_LGUI, KC_LALT,                   LT(__MOTION, KC_SPC),               KC_RALT, MO(MAC_FN),KC_RCTL, KC_LEFT, KC_DOWN,  KC_RGHT),
 
     [MAC_W] = LAYOUT( /* Base */
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, KC_END,  _______, _______, _______, _______, _______, KC_UP,   _______, _______, _______, _______, _______,
         KC_CAPS, KC_HOME, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_BTN2,          _______,
         _______, _______, _______, _______, _______, _______, KC_DOWN, KC_END,  _______, _______, _______, KC_BTN1,          KC_MS_U, KC_BTN3,
-        _______, _______, _______,                   _______,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R),
+        _______, _______, _______,                   KC_BTN1,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R),
 };
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
