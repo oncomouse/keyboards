@@ -32,6 +32,12 @@ while read -r file; do
     ln -sf "${file}" "${OUTPUT_DIR}"
 done <<< "$(find "$KEYBOARD_HOME/keyboards" -type f)"
 
+while read -r file; do
+    OUTPUT_DIR="$(echo "$(dirname "$file")" | sed -e "s@$KEYBOARD_HOME@$QMK_HOME@")"
+    mkdir -p "${OUTPUT_DIR}"
+    ln -sf "${file}" "${OUTPUT_DIR}"
+done <<< "$(find "$KEYBOARD_HOME/users" -type f)"
+
 # Prepare users:
 mkdir -p $USER_SPACE
 find "$KEYBOARD_HOME/users" -type d -links 2 -exec ln -sf {} "$USER_SPACE" \;
