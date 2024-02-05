@@ -20,10 +20,10 @@
 // clang-format off
 enum layers{
   MAC_BASE,
+  __MOTION,
   MAC_FN,
   WIN_BASE,
   WIN_FN,
-  __MOTION,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
