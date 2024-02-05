@@ -68,6 +68,7 @@ void media_finished(tap_dance_state_t *state, void *user_data) {
         // In order to type `ff` when typing fast, the nemedia_t character will have to be hit within the `TAPPING_TERM`, which by default is 200ms.
         /* case TD_DOUBLE_SINGLE_TAP: tap_code(KC_X); register_code(KC_X); break; */
         default: break;
+
     }
 }
 
@@ -83,7 +84,38 @@ void media_reset(tap_dance_state_t *state, void *user_data) {
     media_tap_state.state = TD_NONE;
 }
 
+bool super_ctrl_ctrl_enabled = true;
+static td_tap_t super_ctrl_tap_state = {
+    .is_press_action = true,
+    .state = TD_NONE
+};
+
+void super_ctrl_finished(tap_dance_state_t *state, void *user_data) {
+    super_ctrl_tap_state.state = cur_dance(state);
+    switch (super_ctrl_tap_state.state) {
+        case TD_SINGLE_HOLD:
+            register_code(KC_LCTL);
+            break;
+        case TD_DOUBLE_HOLD:
+            layer_on(1);
+            break;
+        default: register_code(KC_LCTL);
+    }
+}
+void super_ctrl_reset(tap_dance_state_t *state, void *user_data) {
+    switch (super_ctrl_tap_state.state) {
+        case TD_SINGLE_HOLD:
+            unregister_code(KC_LCTL);
+        case TD_DOUBLE_HOLD:
+            layer_off(1);
+            break;
+        default: unregister_code(KC_LCTL);
+    }
+    super_ctrl_tap_state.state = TD_NONE;
+}
+
 tap_dance_action_t tap_dance_actions[] = {
+    [TD_SUPER_CTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, super_ctrl_finished, super_ctrl_reset),
     /* Powerful all-in-one */
     [TD_MEDIA] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, media_finished, media_reset),
     /* Shared Mapping */

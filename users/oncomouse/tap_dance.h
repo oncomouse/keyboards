@@ -23,6 +23,9 @@ td_state_t cur_dance(tap_dance_state_t *state);
 void media_finished(tap_dance_state_t *state, void *user_data);
 void media_reset(tap_dance_state_t *state, void *user_data);
 
+void super_ctrl_finished(tap_dance_state_t *state, void *user_data);
+void super_ctrl_reset(tap_dance_state_t *state, void *user_data);
+
 enum {
     TD_MEDIA = 0,
     TD_HOME_PLY,
@@ -35,4 +38,5 @@ enum {
     TD_PGUP_PRV,
     TD_PGDN_NXT,
     TD_F12_PRV,
+    TD_SUPER_CTRL,
 };
