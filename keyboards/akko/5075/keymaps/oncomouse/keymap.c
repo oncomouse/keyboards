@@ -14,17 +14,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// clang-format off
 #include QMK_KEYBOARD_H
 #include "oncomouse.h"
-// clang-format off
 enum __layers {
     WIN_B,
+    __MOTION,
     WIN_W,
     WIN_FN,
     MAC_B,
     MAC_W,
     MAC_FN,
-    __MOTION,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [__MOTION] = LAYOUT( /* Base */
         QM_STLK, KC_BRID, KC_BRIU, _______, _______, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, KC_MSTP, RGB_TOG,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, KC_END,  _______, _______, _______, KC_PGUP, KC_UP, _______,   _______, _______, _______, _______, _______,
+        _______, _______, _______, KC_END,  _______, _______, _______, KC_PGUP, KC_UP,   KC_UP,   _______, _______, _______, _______, _______,
         KC_CAPS, KC_HOME, _______, KC_PGDN, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_BTN2,          _______,
         _______, _______, _______, _______, _______, _______, KC_DOWN, KC_END,  _______, _______, _______, KC_BTN1,          KC_MS_U, KC_BTN3,
         _______, _______, _______,                   KC_BTN1,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R),
