@@ -104,7 +104,7 @@ void super_ctrl_finished(tap_dance_state_t *state, void *user_data) {
         case TD_DOUBLE_HOLD:
             layer_on(super_ctrl_layer);
             break;
-        default: register_code(KC_LCTL);
+        default: register_code(KC_ESC);
     }
 }
 void super_ctrl_reset(tap_dance_state_t *state, void *user_data) {
@@ -114,7 +114,7 @@ void super_ctrl_reset(tap_dance_state_t *state, void *user_data) {
         case TD_DOUBLE_HOLD:
             layer_off(super_ctrl_layer);
             break;
-        default: unregister_code(KC_LCTL);
+        default: unregister_code(KC_ESC);
     }
     super_ctrl_tap_state.state = TD_NONE;
 }
