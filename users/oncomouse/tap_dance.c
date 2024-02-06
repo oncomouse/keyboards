@@ -85,6 +85,11 @@ void media_reset(tap_dance_state_t *state, void *user_data) {
 }
 
 bool super_ctrl_ctrl_enabled = true;
+int super_ctrl_layer = 4;
+#if defined(NON_KEYCHRON)
+super_ctrl_layer = 1;
+#endif
+
 static td_tap_t super_ctrl_tap_state = {
     .is_press_action = true,
     .state = TD_NONE
@@ -97,7 +102,7 @@ void super_ctrl_finished(tap_dance_state_t *state, void *user_data) {
             register_code(KC_LCTL);
             break;
         case TD_DOUBLE_HOLD:
-            layer_on(1);
+            layer_on(super_ctrl_layer);
             break;
         default: register_code(KC_LCTL);
     }
@@ -107,7 +112,7 @@ void super_ctrl_reset(tap_dance_state_t *state, void *user_data) {
         case TD_SINGLE_HOLD:
             unregister_code(KC_LCTL);
         case TD_DOUBLE_HOLD:
-            layer_off(1);
+            layer_off(super_ctrl_layer);
             break;
         default: unregister_code(KC_LCTL);
     }
