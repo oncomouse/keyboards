@@ -19,10 +19,10 @@
 #include "oncomouse.h"
 enum __layers {
     WIN_B,
-    __MOTION,
     WIN_W,
     WIN_FN,
     MAC_B,
+    __MOTION,
     MAC_W,
     MAC_FN,
 };
