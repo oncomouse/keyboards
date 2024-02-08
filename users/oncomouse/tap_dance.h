@@ -2,6 +2,10 @@
 
 #define TAPPING_TERM_PER_KEY
 #define HOLD_ON_OTHER_KEY_PRESS
+#if defined(SUPER_CTRL_LAYER)
+#else
+#define SUPER_CTRL_LAYER 4
+#endif
 
 typedef enum {
     TD_NONE,
