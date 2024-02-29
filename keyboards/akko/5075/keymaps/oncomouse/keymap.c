@@ -80,7 +80,7 @@ TD(TD_SUPER_CTRL), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,  
     [__MOTION] = LAYOUT( /* Base */
         QM_STLK, KC_BRID, KC_BRIU, _______, _______, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD, KC_VOLU, KC_MSTP, RGB_TOG,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, KC_END,  _______, _______, _______, KC_PGUP, KC_UP,   _______, KC_UP,   _______, _______, _______, _______,
+        _______, _______, _______, KC_END,  _______, _______, _______, KC_PGUP, KC_UP,   KC_PGDN_, KC_UP,   _______, _______, _______, _______,
         KC_CAPS, KC_HOME, _______, KC_PGDN, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, KC_BTN2,          _______,
         _______, _______, _______, _______, _______, _______, KC_DOWN, KC_END,  _______, _______, _______, KC_BTN1,          KC_MS_U, KC_BTN3,
         _______, _______, _______,                   KC_BTN1,                            _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R),
