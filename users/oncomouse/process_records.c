@@ -1,11 +1,14 @@
 #include "oncomouse.h"
 
 bool custom_lctl_active = false;
+#if defined(LEADER_ENABLE)
+static uint16_t custom_lctl_timer;
+#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  static uint16_t custom_lctl_timer;
   switch(keycode) {
   /* Stop music and send lock screen shortcut */
+  #if defined(LEADER_ENABLE)
   case QM_STLK:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_MSTP) SS_DELAY(50) SS_LWIN(SS_LCTL("q")));
@@ -49,6 +52,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
     }
     break;
+  #endif
   }
   return true;
 }

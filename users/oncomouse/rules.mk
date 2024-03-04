@@ -2,11 +2,13 @@ ENCODER_MAP_ENABLE = yes
 SEND_STRING_ENABLE = yes
 COMBO_ENABLE = yes
 KEY_OVERRIDE_ENABLE = no
-LEADER_ENABLE = yes
+LEADER_ENABLE = no
 TAP_DANCE_ENABLE = yes
 
-SRC += tap_dance.c
 SRC += process_records.c
+ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
+  SRC += tap_dance.c
+endif
 ifeq ($(strip $(KEY_OVERRIDE_ENABLE)), yes)
 	SRC += override_user.c
 endif
